@@ -1,19 +1,25 @@
-import { StyleSheet, View } from 'react-native';
-import Home from './components/Home'
+import './gesture-handler';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Weather from './components/Weather'
+import Home from './components/Home';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+function MyStack() {
   return (
-    <View style={styles.container}>
-      <Home/>
-    </View>
+    <Stack.Navigator 
+    screenOptions={{headerTitleAlign: 'center'}}>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Weather" component={Weather} />
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#00004d',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20
-  }});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyStack/>
+    </NavigationContainer>
+  );
+}
