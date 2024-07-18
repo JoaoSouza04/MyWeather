@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, Image, Pressable, View } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 
 export default function Header() {
     return (
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     image: {
+        marginTop: 10,
         marginBottom: 20,
         width: 85,
         height: 85,
