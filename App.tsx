@@ -1,4 +1,3 @@
-import './gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Weather from './components/Weather'
